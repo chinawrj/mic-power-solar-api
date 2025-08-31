@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# Local results/logs
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Discovery result dumps (may contain PII)
+doc/*realtime_api_documentation*.md
+doc/*targeted_api_discovery_results_*.json
+doc/api_discovery_results_*.json
+
+# IDE/editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Gradle/Android build outputs
+**/build/

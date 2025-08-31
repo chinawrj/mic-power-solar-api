@@ -1,0 +1,28 @@
+package com.taobao.weex.ui.action;
+
+import com.taobao.weex.WXSDKInstance;
+import com.taobao.weex.ui.component.WXComponent;
+
+/* loaded from: classes3.dex */
+public class GraphicActionRefreshFinish extends BasicGraphicAction {
+    private int mLayoutHeight;
+    private int mLayoutWidth;
+
+    public GraphicActionRefreshFinish(WXSDKInstance wXSDKInstance) {
+        super(wXSDKInstance, "");
+        WXComponent rootComponent = wXSDKInstance.getRootComponent();
+        if (rootComponent != null) {
+            this.mLayoutWidth = (int) rootComponent.getLayoutWidth();
+            this.mLayoutHeight = (int) rootComponent.getLayoutHeight();
+        }
+    }
+
+    @Override // com.taobao.weex.ui.action.IExecutable
+    public void executeAction() {
+        WXSDKInstance wXSDKIntance = getWXSDKIntance();
+        if (wXSDKIntance == null || wXSDKIntance.getContext() == null) {
+            return;
+        }
+        wXSDKIntance.onRefreshSuccess(this.mLayoutWidth, this.mLayoutHeight);
+    }
+}
