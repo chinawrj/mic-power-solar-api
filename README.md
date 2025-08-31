@@ -59,6 +59,15 @@ if client.login():
 - ✅ 敏感信息通过环境变量提供
 - ✅ 仅供研究和学习目的
 
+## ⚖️ 法律声明
+
+**重要**: 本项目基于合法的软件逆向工程技术开发，符合中美两国相关法律法规。详细法律声明请参见 [LEGAL_NOTICE.md](LEGAL_NOTICE.md)。
+
+- 🔍 **逆向工程合法性**: 符合学术研究和互操作性目的
+- 📚 **仅供学习使用**: 不得用于商业或非法用途  
+- 🚫 **免责声明**: 使用者自行承担使用风险
+- 📖 **知识产权**: 尊重原软件知识产权
+
 ## 📊 项目状态
 
 - ✅ **API逆向工程** - 完成
@@ -67,4 +76,29 @@ if client.login():
 - ✅ **文档编写** - 完成
 - ✅ **测试验证** - 通过
 
+## 🤝 贡献
+
+欢迎提交Issues和Pull Requests来改进这个项目。
+
+## 📜 许可证
+
+本项目采用 MIT License（仅限学术研究和教育用途）。详见 [LICENSE](LICENSE) 文件。
+
+**使用限制**:
+- ✅ 学术研究和教育用途
+- ✅ 技术学习和互操作性研究  
+- ❌ 商业用途（需获得明确许可）
+- ❌ 违法或侵权用途
+
+## ⚖️ 完整法律信息
+
+- 📄 **详细法律声明**: [LEGAL_NOTICE.md](LEGAL_NOTICE.md)
+- 📋 **使用许可**: [LICENSE](LICENSE)
+- 🔍 **逆向工程合规性**: 符合中美法律法规
+
 详细信息请参见 [doc/PROJECT_README.md](doc/PROJECT_README.md) 和 [doc/final_api_summary.md](doc/final_api_summary.md)
+
+---
+
+*最后更新: 2025-08-31*  
+*开发者: [@chinawrj](https://github.com/chinawrj)*
