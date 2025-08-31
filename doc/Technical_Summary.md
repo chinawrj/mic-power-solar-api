@@ -33,16 +33,32 @@
 ## 签名机制
 
 ```
-签名密钥: <通过环境变量 MIC_SIGNATURE_KEY 提供>
-算法: MD5(请求参数 + 密钥)
+签名密钥: 1f80ca5871919371ea71716cae4841bd
+算法: MD5(sorted_params + key)
 ```
 
-## 验证命令
+## 生产就绪工具
+
+### MICPowerAPIClient
+- **文件**: `mic_power_api_client.py`  
+- **状态**: ✅ 生产就绪
+- **功能**: 完整的API客户端库
+
+### 测试脚本
+- `test_api.py` - 基础测试
+- `comprehensive_api_test.py` - 全面测试  
+- `simple_test.py` - 简单验证
+
+## 快速验证
 
 ```bash
-# 测试服务器连通性
-curl -I http://server-bwn.shuoxd.com:8080
+# 安装依赖
+pip install requests>=2.25.0
 
-# 抓包分析
-# 使用Charles/Wireshark监控HTTP流量
+# 设置环境变量
+export MIC_EMAIL="your_email@example.com"
+export MIC_PASSWORD="your_password"
+
+# 运行客户端
+python mic_power_api_client.py
 ```

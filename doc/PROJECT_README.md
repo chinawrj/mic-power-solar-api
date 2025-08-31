@@ -21,19 +21,27 @@
 ## 🏗️ 项目结构
 
 ```
-doc/
-├── PROJECT_README.md                # 项目说明文档
-├── final_api_summary.md             # 完整的API分析总结
-├── app_analysis.md                  # 应用结构分析
-├── http_https_analysis.md           # 协议分析
-├── api_endpoints_summary.md         # API端点总结
-├── security_analysis.md             # 安全机制分析
-├── mic_power_api_client.py          # 🔥 生产就绪API客户端
-├── working_api_test.py              # 基础API验证脚本
-├── comprehensive_api_test.py        # 全面功能测试
-├── extended_api_test.py             # 扩展端点测试
-├── intelligent_api_test.py          # 智能推断测试
-└── realtime_api_documentation.md   # 实时API文档
+guangfu/                                 # 项目根目录
+├── README.md                           # 项目主README
+├── apk/
+│   └── MIC_POWER_20250822.1.apk       # 原始APK文件
+├── app/                                # Android应用源码（逆向提取）
+│   ├── build.gradle
+│   └── src/main/
+└── doc/                                # 📚 文档和API客户端
+    ├── PROJECT_README.md               # 项目详细说明
+    ├── README.md                       # 使用说明
+    ├── final_api_summary.md            # 完整API分析总结
+    ├── API_Endpoints.md                # API端点文档
+    ├── Technical_Summary.md            # 技术摘要
+    ├── BLE_Protocol.md                 # 蓝牙协议分析
+    ├── realtime_api_updates.md         # 实时API更新文档
+    ├── mic_power_api_client.py         # 🔥 生产就绪API客户端
+    ├── test_api.py                     # API测试脚本
+    ├── comprehensive_api_test.py       # 综合测试脚本
+    ├── simple_test.py                  # 简单测试脚本
+    ├── full_debug.py                   # 调试脚本
+    └── requirements.txt                # Python依赖
 ```
 
 ## 🚀 快速开始
@@ -48,6 +56,44 @@ pip install requests
 
 ```python
 from mic_power_api_client import MICPowerAPIClient
+import os
+
+# 设置环境变量
+os.environ['MIC_EMAIL'] = 'your_email@example.com'
+os.environ['MIC_PASSWORD'] = 'your_password'
+
+# 创建客户端实例
+client = MICPowerAPIClient()
+
+# 登录
+if client.login():
+    print("✅ 登录成功")
+    
+    # 获取电站列表
+    stations = client.get_station_list()
+    print(f"📊 找到 {len(stations)} 个电站")
+    
+    # 获取第一个电站的设备列表
+    if stations:
+        devices = client.get_device_list(stations[0]['id'])
+        print(f"🔌 电站包含 {len(devices)} 个设备")
+else:
+    print("❌ 登录失败")
+```
+
+### 高级功能
+
+```python
+# 启用详细日志
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
+# 自定义超时设置
+client = MICPowerAPIClient(timeout=30)
+
+# 批量获取设备数据
+all_devices = client.get_all_devices_data()
+```
 
 # 创建客户端
 client = MICPowerAPIClient()

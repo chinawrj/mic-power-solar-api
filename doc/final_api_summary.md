@@ -426,6 +426,56 @@ doc/
 
 这为光伏监控系统的二次开发和集成提供了坚实的基础。
 
+## 💻 可用脚本和工具
+
+### 🔥 生产就绪客户端
+**文件**: `mic_power_api_client.py`
+- **推荐使用** - 生产环境就绪的完整API客户端
+- 支持所有已验证的API端点
+- 完善的错误处理和日志记录
+- 环境变量配置支持
+
+### 🧪 测试脚本
+**文件**: `test_api.py`
+- 基础API功能测试
+- 用于验证API连接和基本功能
+
+**文件**: `comprehensive_api_test.py`  
+- 全面的API端点测试
+- 深度功能验证和错误处理
+
+**文件**: `simple_test.py`
+- 简化的测试脚本
+- 快速验证基础功能
+
+**文件**: `full_debug.py`
+- 详细的调试信息输出
+- 用于问题诊断和开发调试
+
+### 📦 依赖管理
+**文件**: `requirements.txt`
+- Python依赖包清单
+- 确保所有脚本正常运行
+
+### 🚀 快速开始
+```bash
+# 安装依赖
+pip install -r requirements.txt
+
+# 设置环境变量
+export MIC_EMAIL="your_email@example.com"
+export MIC_PASSWORD="your_password"
+
+# 使用生产客户端
+python -c "
+from mic_power_api_client import MICPowerAPIClient
+client = MICPowerAPIClient()
+if client.login():
+    stations = client.get_station_list()
+    print(f'发现 {len(stations)} 个电站')
+"
+```
+
 ---
 
 *最后更新: 2025-08-31*  
